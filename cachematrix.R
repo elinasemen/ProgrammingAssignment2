@@ -1,7 +1,7 @@
-## Вычисление обратной матрицы может быть довольно затратным.
-## Для того, чтобы не выполнять вычисления повторно, лучше сохранить полученный результат.
+## Calculating inverse matrix may be time consuming
+## In order not to dothe same actions once again, it is better to cache the result.
 
-## Данная функция создает объект, который хранит матрицу, обратную исходной.
+## This function creates a special "matrix" object that can cache its inverse
 
 makeCacheMatrix <- function(x = matrix()) {
         inv <- NULL
@@ -18,8 +18,8 @@ makeCacheMatrix <- function(x = matrix()) {
              getInverse = getInverse)
 }
 
-## Данная функция находит матрицу, обратную той, которая была создана функцией makeCacheMatrix()
-## Если обратная матрица уже посчитана (и матрица не изменилась), функция должна возвращать обратную матрицу из кэша
+## This function computes the inverse of the special "matrix" returned by makeCacheMatrix above. 
+## If the inverse has already been calculated (and the matrix has not changed), then the cachesolve should retrieve the inverse from the cache.
 
 cacheSolve <- function(x, ...) {
         ## Получение матрицы, обратной данной
